@@ -31,7 +31,7 @@ const Navigation = ({ authUser, onLogout }) => {
               onClick={onLogout}
             >
 
-              <MdLogout size={30}/> Logout
+              <MdLogout size={30}/>Logout
 
             </button>
 
