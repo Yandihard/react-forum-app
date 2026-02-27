@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { asyncCreateThread } from '../states/threads/action'
 import ThreadInput from '../components/ThreadInput'
+import { Helmet } from 'react-helmet'
 
 const AddThreadPage = () => {
   const dispatch = useDispatch()
@@ -13,7 +14,12 @@ const AddThreadPage = () => {
   }
 
   return (
+      <>
+        <Helmet>
+          <title>New Thread - Forum App</title>
+        </Helmet>
         <ThreadInput onAddThread={addThreadHandler} />
+      </>
   )
 }
 

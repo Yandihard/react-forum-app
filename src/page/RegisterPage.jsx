@@ -2,6 +2,7 @@ import RegisterInput from '../components/RegisterInput'
 import { useDispatch } from 'react-redux'
 import { asyncRegisterUser } from '../states/users/action'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const RegisterPage = () => {
   const dispatch = useDispatch()
@@ -12,7 +13,12 @@ const RegisterPage = () => {
     navigate('/')
   }
   return (
+   <>
+    <Helmet>
+      <title>Login - Forum App</title>
+    </Helmet>
     <RegisterInput onRegister={registerHandler} />
+  </>
   )
 }
 

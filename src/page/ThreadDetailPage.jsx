@@ -6,6 +6,7 @@ import { asyncDetailThread, asyncToggleLikeThreadDetail, asyncToggleDislikeThrea
 import { postedAt } from '../utils/time'
 import { cleanHtml } from '../utils/truncate'
 import { AiOutlineLike, AiOutlineDislike, AiFillLike, AiFillDislike } from 'react-icons/ai'
+import { Helmet } from 'react-helmet'
 
 const ThreadDetailPage = () => {
   const thread = useSelector((state) => state.detailThread)
@@ -100,7 +101,10 @@ const ThreadDetailPage = () => {
   }
 
   return (
-
+    <>
+      <Helmet>
+            <title>Thread - Forum App</title>
+      </Helmet>
      <div className="container bg-white shadow">
       {/* CATEGORY */}
       <header className="thread-header">
@@ -232,6 +236,7 @@ const ThreadDetailPage = () => {
         </div>
       </div>
       </div>
+    </>
   )
 }
 

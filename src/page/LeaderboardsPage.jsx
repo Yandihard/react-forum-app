@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { asyncPopulateLeaderboards } from '../states/leaderboards/action'
+import { Helmet } from 'react-helmet'
 
 const LeaderboardsPage = () => {
   const dispatch = useDispatch()
@@ -11,6 +12,10 @@ const LeaderboardsPage = () => {
   }, [dispatch])
 
   return (
+  <>
+    <Helmet>
+      <title>Leaderboard - Forum App</title>
+    </Helmet>
     <div className="container bg-white shadow">
       <div className="container-wrapper">
         <h2>Klasmen Pengguna Aktif</h2>
@@ -42,6 +47,7 @@ const LeaderboardsPage = () => {
         </div>
       </div>
     </div>
+  </>
   )
 }
 
