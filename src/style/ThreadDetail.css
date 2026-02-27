@@ -1,0 +1,172 @@
+.detail-page {
+
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+
+}
+
+
+/* CATEGORY */
+
+.thread-header__category {
+
+  color: var(--primary);
+  font-weight: bold;
+
+}
+
+
+
+/* TITLE UNGU */
+
+.thread-title {
+
+  color: var(--primary);
+
+  margin:
+
+    10px 0 20px;
+
+}
+
+
+
+/* BODY */
+
+.thread-content__body {
+
+  line-height: 1.7;
+
+}
+
+
+
+/* FOOTER */
+
+.thread-footer {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 20px;
+
+}
+
+
+
+/* ACTION BUTTON */
+
+.thread-action {
+
+  display: flex;
+
+  gap: 5px;
+
+  align-items: center;
+
+  border: none;
+
+  background: none;
+
+  color: var(--on-background);
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+}
+
+
+
+/* OWNER */
+
+.owner-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-left: auto;
+
+}
+
+
+.owner-info img {
+
+  width: 30px;
+
+  border-radius: 50%;
+
+}
+
+
+
+/* COMMENT */
+
+.thread-comment {
+
+  margin-top: 40px;
+
+}
+
+
+
+.comment-input {
+
+  border: 1px solid #2d3e50;
+
+  padding: 10px;
+
+  min-height: 100px;
+
+  margin: 10px 0;
+
+  border-radius: 4px;
+
+  width: 100%;
+}
+
+
+
+.comment-item {
+
+  margin-top: 20px;
+
+}
+
+
+.comment-owner {
+
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+
+}
+
+
+
+.comment-owner img {
+
+  width: 30px;
+
+  border-radius: 50%;
+
+}
+
+
+
+.posted-at {
+
+  color: gray;
+
+  font-size: 14px;
+
+}
