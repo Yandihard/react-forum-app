@@ -35,7 +35,7 @@ function App () {
   }
 
   if (isPreload) {
-    return null
+    return <Loading />
   }
   if (authUser === null) {
     return (

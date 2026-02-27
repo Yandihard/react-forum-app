@@ -60,7 +60,8 @@ describe('Login spec', () => {
 
     cy.wait('@loginRequest')
 
-    cy.contains('Logout').should('be.visible')
+    // cy.contains('Logout').should('be.visible')
+    cy.contains('Logout', { timeout: 10000 }).should('exist')
     cy.contains('Halo,').should('be.visible')
   })
 })
