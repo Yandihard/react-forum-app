@@ -3,6 +3,7 @@ import AddThreadButton from '../components/AddThreadButton'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { asyncPopulateThreadsAndUsers } from '../states/shared/action'
+import { Helmet } from 'react-helmet'
 
 const ThreadsPage = () => {
   const dispatch = useDispatch()
@@ -15,6 +16,10 @@ const ThreadsPage = () => {
   }, [dispatch])
 
   return (
+   <>
+        <Helmet>
+            <title>Threads - Forum App</title>
+        </Helmet>
     <div className="container bg-white shadow">
       <div className="container-wrapper">
         <h3 className="mb-4">Diskusi tersedia</h3>
@@ -34,6 +39,7 @@ const ThreadsPage = () => {
         </div>
       </div>
     </div>
+  </>
   )
 }
 

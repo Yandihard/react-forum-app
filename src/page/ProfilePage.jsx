@@ -1,9 +1,14 @@
 import { useSelector } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 function ProfilePage () {
   const authUser = useSelector((state) => state.authUser)
 
   return (
+    <>
+        <Helmet>
+            <title>Profile - Forum App</title>
+        </Helmet>
         <div className="form-container shadow">
             <h2>Informasi Profil</h2>
             <div className="profile mt-3">
@@ -14,6 +19,7 @@ function ProfilePage () {
                 <p style={{ marginBottom: '0' }}>@{authUser.id}<br />{authUser.name}<br />{authUser.email}<br /></p>
             </div>
         </div>
+    </>
   )
 }
 
