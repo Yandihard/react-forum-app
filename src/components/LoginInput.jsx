@@ -27,9 +27,9 @@ const LoginInput = ({ onLogin }) => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password">Password:</label>
-                    <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" onChange={changeFormhandler} />
+                    <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" value={formLogin.password} onChange={changeFormhandler} />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                {/* <button type="submit" className="btn btn-primary">Login</button> */}
                 <p className="mt-3">Belum punya akun? <Link to="/register">Daftar di sini.</Link></p>
             </form>
     </div>
