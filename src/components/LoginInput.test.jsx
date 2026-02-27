@@ -1,5 +1,5 @@
 import React from 'react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import matchers from '@testing-library/jest-dom/matchers'
@@ -17,7 +17,6 @@ expect.extend(matchers)
 
 describe('LoginInput component', () => {
   it('should handle username typing correctly', async () => {
-    // Arrange
     render(
       <MemoryRouter>
         <LoginInput onLogin={() => {}} />
@@ -25,15 +24,12 @@ describe('LoginInput component', () => {
     )
     const emailInput = await screen.getByPlaceholderText('Enter email')
 
-    // Action
     await userEvent.type(emailInput, 'user@test.com')
 
-    // Assert
     expect(emailInput.value).toBe('user@test.com')
   })
 
   it('should handle password typing correctly', async () => {
-    // Arrange
     render(
         <MemoryRouter>
             <LoginInput onLogin={() => {}} />
@@ -41,10 +37,32 @@ describe('LoginInput component', () => {
     )
     const passwordInput = await screen.getByPlaceholderText('Enter password')
 
-    // Action
     await userEvent.type(passwordInput, 'passwordtest')
 
-    // Assert
     expect(passwordInput).toHaveValue('passwordtest')
+  })
+
+  it('should call login function when login button is clicked', async () => {
+    const mockLogin = vi.fn()
+
+    render(
+      <MemoryRouter>
+        <LoginInput onLogin={mockLogin} />
+      </MemoryRouter>
+    )
+
+    const emailInput = screen.getByPlaceholderText('Enter email')
+    await userEvent.type(emailInput, 'user@test.com')
+
+    const passwordInput = screen.getByPlaceholderText('Enter password')
+    await userEvent.type(passwordInput, 'passwordtest')
+
+    const loginButton = screen.getByRole('button', { name: /login/i })
+    await userEvent.click(loginButton)
+
+    expect(mockLogin).toHaveBeenCalledWith({
+      email: 'user@test.com',
+      password: 'passwordtest'
+    })
   })
 })

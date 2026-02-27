@@ -50,7 +50,7 @@ const RegisterInput = ({ onRegister }) => {
           <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" value={formRegister.password} onChange={changeFormhandler} />
         </div>
         <button type="submit" className="btn btn-primary">Register</button>
-        <p className="mt-3">Sudah punya akun? <Link to="/">Login di sini.</Link></p>
+        <p className="mt-3">Sudah punya akun? <Link to="/">Login di sini</Link></p>
       </form>
     </div>
   )

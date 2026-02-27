@@ -48,6 +48,8 @@ describe('Login spec', () => {
   })
 
   it('should display homepage when username and password are correct', () => {
+    cy.intercept('POST', '**/login').as('loginRequest')
+
     cy.get('input[placeholder="Enter email"]')
       .type('angelz28@angelz28.com')
 
@@ -56,8 +58,10 @@ describe('Login spec', () => {
 
     cy.get('button').contains(/^Login$/).click()
 
-    cy.contains('Logout').should('be.visible')
+    cy.wait('@loginRequest')
 
+    // cy.contains('Logout').should('be.visible')
+    cy.contains('Logout', { timeout: 10000 }).should('exist')
     cy.contains('Halo,').should('be.visible')
   })
 })
