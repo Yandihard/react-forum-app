@@ -61,4 +61,4 @@ src/
 
 ## 📄 Lisensi
 
-Proyek ini dibuat untuk tujuan edukasi (Dicoding). Hak cipta © 2024.
+Proyek ini dibuat untuk tujuan edukasi dan sebagai portfolio (Yandi Hardiansyah). Hak cipta © 2026.
