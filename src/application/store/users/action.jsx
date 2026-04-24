@@ -1,3 +1,4 @@
+import { register } from '../../../data/api/api'
 import { hideLoading, showLoading } from '@dimasmds/react-redux-loading-bar'
 import { showNotificationActionCreator } from '../notification/action'
 
@@ -23,10 +24,13 @@ function asyncRegisterUser ({ name, email, password }) {
         message: 'Akun berhasil dibuat! Silakan masuk.', 
         type: 'success' 
       }))
+      dispatch(hideLoading())
+      return true
     } catch (error) {
       dispatch(showNotificationActionCreator({ message: error.message, type: 'error' }))
+      dispatch(hideLoading())
+      return false
     }
-    dispatch(hideLoading())
   }
 }
 
